@@ -18,4 +18,4 @@ The main research areas of this Group, which is framed within the Department of 
 
 - Biological modeling, artificial life and artificial creativity
 
-### [Repositories](./repositories.html)
+### [Repositories](./repositories.md)
