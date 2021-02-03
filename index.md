@@ -2,7 +2,7 @@
 
 The Computational Intelligence and Image Analysis Group of the University of Malaga -ICAI-, led by Professor Ezequiel López, is today a benchmark in neurocomputing, computational learning and artificial intelligence.
 
-With more than 30 years of research activity, it was founded by Professor José Muñoz, a pioneer in Spain in the study of neural networks.
+With more than 30 years of research activity, it was founded by Professor José Muñoz, a pioneer in Spain in the study of artificial neural networks.
 
 But in addition to its research career, recognized nationally and internationally, this Group, attentive to the demands of society, transfers the latest technology that it develops to sectors ranging from biomedicine to e-training or marketing, among others.
 
