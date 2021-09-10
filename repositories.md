@@ -4,3 +4,4 @@
 - Ellipse fitting by spatial averaging of random ensembles: [[paper](https://doi.org/10.1016/j.patcog.2020.107406)] [[web](https://icai-uma.github.io/SAREfit/)] [[code](https://github.com/icai-uma/SAREfit)]
 - Deep learning-based super-resolution of 3D magnetic resonance images by regularly spaced shifting: [[paper](https://doi.org/10.1016/j.neucom.2019.05.107)] [[web](https://icai-uma.github.io/SRCNN3D_RegSS/)] [[code](https://github.com/icai-uma/SRCNN3D_RegSS)]
 - The Growing Hierarchical Neural Gas Self-Organizing Neural Network: [[paper](https://doi.org/10.1109/TNNLS.2016.2570124)] [[web](https://icai-uma.github.io/GHNG/)] [[code](https://github.com/icai-uma/GHNG)]
+- Skin lesion classification by ensembles of deep convolutional networks and regularly spaced shifting: [[paper](https://doi.org/10.1109/ACCESS.2021.3103410)] [[web](https://icai-uma.github.io/SLC_ShiftingEnsemble/)] [[code](https://github.com/icai-uma/SLC_ShiftingEnsemble)]
