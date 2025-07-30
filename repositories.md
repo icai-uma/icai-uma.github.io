@@ -1,5 +1,6 @@
 ## List of public repositories of ICAI projects
 
+- Latent diffusion for arbitrary zoom MRI super-resolution: [[paper](https://doi.org/10.1016/j.eswa.2025.127970)] [[web](https://icai-uma.github.io/Latent-diffusion-for-arbitrary-zoom-MRI-super-resolution/)] [[code](https://github.com/icai-uma/Latent-diffusion-for-arbitrary-zoom-MRI-super-resolution)]
 - Enhanced generation of automatically labelled image segmentation datasets by advanced style interpreter deep architectures: [[paper](https://doi.org/10.1016/j.patrec.2025.04.021)] [[web](https://icai-uma.github.io/datasetGAN2_release/)] [[code](https://github.com/icai-uma/datasetGAN2_release)]
 - Semi-Supervised Semantic Image Segmentation by Deep Diffusion Models and Generative Adversarial Networks: [[paper](https://doi.org/10.1142/s0129065724500576)] [[web](https://icai-uma.github.io/MaskGDM/)] [[code](https://github.com/icai-uma/MaskGDM)]
 - Median Filter Transform for 3D MR images: [[paper](https://doi.org/10.1109/ICIP40778.2020.9191237)] [[web](https://icai-uma.github.io/MFT3D/)] [[code](https://github.com/icai-uma/MFT3D)]
