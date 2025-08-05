@@ -1,5 +1,6 @@
 ## List of public repositories of ICAI projects
 
+- Enhanced deep-style interpreter for automatic synthesis of annotated medical images: [[paper](https://doi.org/10.1007/s00521-025-11516-8)] [[web](https://icai-uma.github.io/DatasetGAN2-ADA/)] [[code](https://github.com/icai-uma/DatasetGAN2-ADA)]
 - Representation of Molecules by Sequences of Instructions: [[paper](https://doi.org/10.1021/acs.jcim.5c00354)] [[web](https://icai-uma.github.io/representation-of-molecules-by-sequences-of-instructions/)] [[code](https://github.com/icai-uma/representation-of-molecules-by-sequences-of-instructions)]
 - Learning to shape beams: Using a neural network to control a beamforming antenna: [[paper](https://doi.org/10.1016/j.comnet.2025.111544)] [[web](https://icai-uma.github.io/learning-to-shape-beams-using-a-neural-network-to-control-a-beamforming-antenna/)] [[code](https://github.com/icai-uma/learning-to-shape-beams-using-a-neural-network-to-control-a-beamforming-antenna)]
 - Latent diffusion for arbitrary zoom MRI super-resolution: [[paper](https://doi.org/10.1016/j.eswa.2025.127970)] [[web](https://icai-uma.github.io/Latent-diffusion-for-arbitrary-zoom-MRI-super-resolution/)] [[code](https://github.com/icai-uma/Latent-diffusion-for-arbitrary-zoom-MRI-super-resolution)]
