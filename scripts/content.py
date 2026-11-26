@@ -22,7 +22,7 @@ REQUIRED = {
     "news": ("title", "date"),
     "metrics": ("title", "value", "source", "date"),
 }
-PUBLICATION_TYPES = {"articulo", "congreso", "capitulo", "libro", "otro"}
+PUBLICATION_TYPES = {"articulo", "congreso", "capitulo", "libro", "otro", "sin_clasificar"}
 EXTERNAL_SECTIONS = ("publications", "projects", "theses", "metrics")
 DRIVE_FILES = "https://www.googleapis.com/drive/v3/files"
 
@@ -186,50 +186,53 @@ def read_workbook(input_bytes, schema):
 
 
 def aliases(section, row):
+    exact = set()
+    url = row.get("portalUrl") or row.get("url", "")
+    if urlsplit(url).hostname == urlsplit(PORTAL).hostname and re.match(r"^/(documentos|proyectos|tesis)/[^/]+", urlsplit(url).path):
+        exact.add(f'url:{urlsplit(url).path.rstrip("/")}')
     if section == "publications":
-        title = f'{normalized(row["title"])}|{row["year"]}'
-        return [title] + ([f'doi:{row["doi"].casefold()}'] if row.get("doi") else [])
-    if section == "projects":
-        title = f'{normalized(row["title"])}|{row["year"]}'
-        return [title] + ([f'ref:{normalized(row["reference"])}'] if row.get("reference") else [])
-    if section == "theses":
-        return [f'{normalized(row["title"])}|{row["year"]}|{normalized(row["author"])}']
-    return [f'{normalized(row["title"])}|{normalized(row["source"])}|{row["date"]}']
+        if row.get("doi"):
+            exact.add(f'doi:{row["doi"].casefold()}')
+        weak = f'{normalized(row["title"])}|{row["year"]}'
+    elif section == "projects":
+        if row.get("reference"):
+            exact.add(f'ref:{normalized(row["reference"])}')
+        weak = f'{normalized(row["title"])}|{row["year"]}'
+    elif section == "theses":
+        author = " ".join(sorted(normalized(row["author"]).split()))
+        weak = f'{normalized(row["title"])}|{row["year"]}|{author}'
+    else:
+        weak = f'{normalized(row["title"])}|{normalized(row["source"])}|{row["date"]}'
+    return exact, weak
 
 
 def merge_records(section, imported, editorial):
     combined = []
-    by_alias = {}
-    for row in [*imported, *editorial]:
-        keys = aliases(section, row)
-        matches = sorted({by_alias[key] for key in keys if key in by_alias})
-        if matches:
-            index = matches[0]
-            for duplicate in matches[1:]:
-                combined[index].update({key: value for key, value in combined[duplicate].items() if value != ""})
-                combined[duplicate] = {}
-                for key, position in list(by_alias.items()):
-                    if position == duplicate:
-                        by_alias[key] = index
+    identifiers, titles = {}, {}
+    for position, row in enumerate([*imported, *editorial]):
+        exact, weak = aliases(section, row)
+        matches = {identifiers[key] for key in exact if key in identifiers}
+        if not matches and (position >= len(imported) or not exact):
+            matches = titles.get(weak, set())
+        if len(matches) == 1:
+            index = next(iter(matches))
             combined[index].update({key: value for key, value in row.items() if value != ""})
         else:
             index = len(combined)
             combined.append(row.copy())
-        for key in keys:
-            by_alias[key] = index
-    return [record for record in combined if record and record.get("visible", True)]
+        for key in exact:
+            identifiers[key] = index
+        titles.setdefault(weak, set()).add(index)
+    return [record for record in combined if record.get("visible", True)]
 
 
-def merge_export(data, payload, schema):
-    """The institutional adapter must supply a consented and normalized export."""
-    if payload.get("groupId") != "69865" or payload.get("version") != 1:
-        raise ValueError("La exportación no corresponde al esquema ICAI v1.")
-    date.fromisoformat(payload["date"])
+def merge_portal(data, payload, schema):
+    """Allow editorial entries to complete or suppress matching public records."""
     roster = payload.get("researchers", [])
     candidates = {}
     for person in roster:
         if not re.fullmatch(r"[0-9]+", text(person.get("id"))) or not text(person.get("name")):
-            raise ValueError("Perfil inválido en la exportación.")
+            raise ValueError("Perfil inválido en los datos del Portal UMA.")
         name = normalized(person["name"])
         candidates.setdefault(name, set()).add(text(person["id"]))
     for person in data["team"]:
@@ -237,13 +240,15 @@ def merge_export(data, payload, schema):
         if not person.get("id") and len(matches) == 1:
             person["id"] = next(iter(matches))
     for section in EXTERNAL_SECTIONS:
-        fields = next(spec["columns"].values() for spec in schema.values() if spec["label"] == section)
-        rows = payload.get(section)
-        if not isinstance(rows, list):
-            raise ValueError(f"La exportación no incluye una lista {section}.")
-        imported = [
-            parse_record({field: row.get(field) for field in fields}, section, f"Exportación {section}, fila {index}")
-            for index, row in enumerate(rows, 1)
-        ]
-        data[section] = merge_records(section, [row for row in imported if row], data[section])
-    return payload["date"]
+        fields = set(next(spec["columns"].values() for spec in schema.values() if spec["label"] == section))
+        imported = []
+        for index, row in enumerate(payload.get(section, []), 1):
+            record = parse_record(
+                {field: value for field, value in row.items() if field in fields},
+                section, f"Portal UMA {section}, fila {index}",
+            )
+            if record:
+                if safe_url(row.get("portalUrl", "")):
+                    record["portalUrl"] = row["portalUrl"]
+                imported.append(record)
+        data[section] = merge_records(section, imported, data[section])

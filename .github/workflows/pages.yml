@@ -51,8 +51,7 @@ jobs:
           ICAI_DRIVE_FILE_ID: ${{ vars.ICAI_DRIVE_FILE_ID }}
           ICAI_DRIVE_FOLDER_ID: ${{ vars.ICAI_DRIVE_FOLDER_ID }}
           ICAI_DRIVE_TOKEN: ${{ steps.drive.outputs.access_token }}
-          ICAI_UMA_EXPORT_URL: ${{ secrets.ICAI_UMA_EXPORT_URL }}
-          ICAI_UMA_EXPORT_TOKEN: ${{ secrets.ICAI_UMA_EXPORT_TOKEN }}
+          ICAI_UMA_PUBLIC_SYNC: ${{ vars.ICAI_UMA_PUBLIC_SYNC }}
         run: python scripts/build_site.py
       - name: Guardar previsualización
         if: github.event_name == 'pull_request'
