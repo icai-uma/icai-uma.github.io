@@ -1,0 +1,51 @@
+{
+  "group": [
+    {"key":"name","es":"Inteligencia Computacional y Análisis de Imágenes","en":"Computational Intelligence and Image Analysis"},
+    {"key":"intro","es":"Investigamos en aprendizaje automático, visión por computador e inteligencia artificial aplicada. Somos el grupo ICAI de la Universidad de Málaga.","en":"We investigate machine learning, computer vision and applied artificial intelligence at the University of Málaga."},
+    {"key":"about","es":"El grupo ICAI (TIC-163) pertenece al Departamento de Lenguajes y Ciencias de la Computación de la Universidad de Málaga. Su investigación abarca desde el desarrollo de nuevos modelos computacionales hasta su aplicación en biomedicina, teledetección y sistemas de apoyo a la decisión.","en":"ICAI (TIC-163) is part of the Department of Computer Languages and Computer Science at the University of Málaga. Our work ranges from developing new computational models to applying them in biomedicine, remote sensing and decision support."},
+    {"key":"location","es":"E.T.S. de Ingeniería Informática · Campus de Teatinos, Málaga","en":"School of Computer Engineering · Teatinos Campus, Málaga"},
+    {"key":"email","es":"elr@uma.es","en":"elr@uma.es"}
+  ],
+  "lines":[
+    {"title":"Visión por computador","titleEn":"Computer vision","description":"Restauración, segmentación y reconocimiento en imágenes y secuencias de vídeo.","descriptionEn":"Restoration, segmentation and recognition in images and video sequences.","topics":"Análisis de imágenes · Vídeo","topicsEn":"Image analysis · Video"},
+    {"title":"Aprendizaje automático","titleEn":"Machine learning","description":"Redes neuronales, aprendizaje no supervisado y modelos generativos para representar datos complejos.","descriptionEn":"Neural networks, unsupervised learning and generative models for complex data.","topics":"Modelos generativos · Neurocomputación","topicsEn":"Generative models · Neurocomputing"},
+    {"title":"Inteligencia artificial aplicada","titleEn":"Applied artificial intelligence","description":"Aplicaciones en imagen biomédica, teledetección y sistemas inteligentes de apoyo a la decisión.","descriptionEn":"Applications in biomedical imaging, remote sensing and intelligent decision support.","topics":"Biomedicina · Teledetección","topicsEn":"Biomedicine · Remote sensing"}
+  ],
+  "team":[
+    {"name":"Ezequiel López Rubio","id":"1241323","role":"Responsable del grupo","roleEn":"Group leader"},
+    {"name":"Rafaela Benítez Rochel","id":"1241663"},
+    {"name":"José Jesús de Benito Picazo","id":"2208696"},
+    {"name":"Enrique Domínguez Merino","id":"1240639"},
+    {"name":"Juan Antonio Falgueras Cano","id":"1241833"},
+    {"name":"José David Fernández Rodríguez","id":"1240458"},
+    {"name":"Rafael Marcos Luque Baena","id":"1241116"},
+    {"name":"Miguel Ángel Molina Cabello","id":"1241163"},
+    {"name":"Juan Miguel Ortiz de Lazcano Lobato","id":"1241856"},
+    {"name":"José Ignacio Peláez Sánchez","id":"1241910"},
+    {"name":"Karl-Khader Thurnhofer Hemsi","id":"1106657"}
+  ],
+  "publications":[
+    {"title":"A latent diffusion framework for spatiotemporal enhancement of geostationary satellite imagery","year":2026,"type":"articulo","venue":"Integrated Computer-Aided Engineering","url":"https://portaldelainvestigacion.uma.es/documentos/6ab8ddf56e19a0b46d23fc36","featured":"Sí"},
+    {"title":"Adaptive image enhancement for robust CNN classification under low illumination","year":2026,"type":"articulo","authors":"José A. Rodríguez-Rodríguez, Ezequiel López-Rubio, Salvador Jiménez-Segura y Miguel A. Molina-Cabello","venue":"Expert Systems with Applications","doi":"10.1016/j.eswa.2026.131696","featured":"Sí"},
+    {"title":"Latent diffusion for arbitrary zoom MRI super-resolution","year":2025,"type":"articulo","venue":"Expert Systems with Applications","doi":"10.1016/j.eswa.2025.127970","code":"https://github.com/icai-uma/Latent-diffusion-for-arbitrary-zoom-MRI-super-resolution","featured":"Sí"},
+    {"title":"Enhanced deep-style interpreter for automatic synthesis of annotated medical images","year":2025,"type":"articulo","venue":"Neural Computing and Applications","doi":"10.1007/s00521-025-11516-8","code":"https://github.com/icai-uma/DatasetGAN2-ADA"},
+    {"title":"Representation of Molecules by Sequences of Instructions","year":2025,"type":"articulo","venue":"Journal of Chemical Information and Modeling","doi":"10.1021/acs.jcim.5c00354","code":"https://github.com/icai-uma/representation-of-molecules-by-sequences-of-instructions"},
+    {"title":"Learning to shape beams: Using a neural network to control a beamforming antenna","year":2025,"type":"articulo","venue":"Computer Networks","doi":"10.1016/j.comnet.2025.111544","code":"https://github.com/icai-uma/learning-to-shape-beams-using-a-neural-network-to-control-a-beamforming-antenna"},
+    {"title":"Enhanced generation of automatically labelled image segmentation datasets by advanced style interpreter deep architectures","year":2025,"type":"articulo","venue":"Pattern Recognition Letters","doi":"10.1016/j.patrec.2025.04.021","code":"https://github.com/icai-uma/datasetGAN2_release"},
+    {"title":"A convolutional autoencoder and a neural gas model based on Bregman divergences for hierarchical color quantization","year":2023,"type":"articulo","venue":"Neurocomputing","doi":"10.1016/j.neucom.2023.126288","code":"https://github.com/jdfr/a_convolutional_autoencoder_and_a_neural_gas_model_based_on_bregman_divergences_for_hierarchical_color_quantization"}
+  ],
+  "projects":[
+    {"title":"Modelos neuronales profundos de difusión probabilística para la detección de la esclerosis múltiple","titleEn":"Deep probabilistic diffusion models for multiple sclerosis detection","year":2026,"endYear":2029,"reference":"DGP_PIDI_2024_00462","funder":"Junta de Andalucía","lead":"Rafael Marcos Luque Baena","description":"Análisis de imágenes de resonancia magnética para apoyar la detección y el seguimiento clínico de lesiones.","descriptionEn":"MRI analysis to support lesion detection and clinical follow-up.","url":"https://portaldelainvestigacion.uma.es/proyectos/1847012/detalle","featured":"Sí"},
+    {"title":"Detección automática de enfermedad coronaria no obstructiva en coronariografías","titleEn":"Automatic detection of non-obstructive coronary disease in angiograms","year":2024,"url":"https://portaldelainvestigacion.uma.es/grupos/69865/financiacion","featured":"Sí"},
+    {"title":"Sistema de videovigilancia basado en cámaras itinerantes robotizadas","titleEn":"Video surveillance with mobile robotic cameras","year":2024,"reference":"SIVICAI","url":"https://portaldelainvestigacion.uma.es/grupos/69865/financiacion"},
+    {"title":"Detección automática de epilepsia focal no lesional mediante modelos neuronales profundos de difusión probabilística","titleEn":"Automatic detection of non-lesional focal epilepsy using deep probabilistic diffusion models","year":2023,"url":"https://portaldelainvestigacion.uma.es/grupos/69865/financiacion"}
+  ],
+  "theses":[
+    {"title":"Regression of the Rician Noise Level in 3D Magnetic Resonance Images Based on Benford’s Law","year":2025,"author":"Rosa María Maza Quiroga","supervisors":"Ezequiel López Rubio y Domingo López Rodríguez","url":"https://portaldelainvestigacion.uma.es/grupos/69865/tesis"},
+    {"title":"Deep Learning Neural Networks to Improve Small Object Detection","year":2023,"author":"Iván García Aguilar","supervisors":"Rafael Marcos Luque Baena y Ezequiel López Rubio","url":"https://portaldelainvestigacion.uma.es/grupos/69865/tesis"}
+  ],
+  "news":[
+    {"title":"Nuevos métodos de visión artificial para entornos con poca luz","titleEn":"New computer vision methods for low-light settings","date":"2026-05-27","type":"Divulgación","typeEn":"Outreach","description":"La Junta de Andalucía recoge una investigación sobre el reconocimiento de imágenes en condiciones de baja iluminación.","descriptionEn":"The Andalusian regional government reports on research into image recognition under low-light conditions.","url":"https://www.juntadeandalucia.es/organismos/presidenciasanidadyemergencias/servicios/actualidad/noticias/detalle/660406.html"}
+  ],
+  "metrics":[]
+}

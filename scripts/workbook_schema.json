@@ -1,0 +1,10 @@
+{
+  "Grupo": {"label":"group","columns":{"Clave":"key","Español":"es","Inglés":"en"}},
+  "Líneas": {"label":"lines","columns":{"Título ES":"title","Título EN":"titleEn","Descripción ES":"description","Descripción EN":"descriptionEn","Temas ES":"topics","Temas EN":"topicsEn"}},
+  "Equipo": {"label":"team","columns":{"Nombre":"name","ID UMA":"id","Cargo ES":"role","Cargo EN":"roleEn","Bio ES":"description","Bio EN":"descriptionEn","Foto URL":"photo","Web personal":"url","ORCID":"orcid","Publicar":"visible"}},
+  "Publicaciones": {"label":"publications","columns":{"Título":"title","Año":"year","Tipo":"type","Autores":"authors","Revista o congreso":"venue","DOI":"doi","Enlace":"url","Código":"code","Destacar":"featured","Publicar":"visible"}},
+  "Proyectos": {"label":"projects","columns":{"Título ES":"title","Título EN":"titleEn","Inicio":"year","Fin":"endYear","Referencia":"reference","Financiador":"funder","Investigador principal":"lead","Resumen ES":"description","Resumen EN":"descriptionEn","Enlace":"url","Destacar":"featured","Publicar":"visible"}},
+  "Tesis": {"label":"theses","columns":{"Título":"title","Año":"year","Autor":"author","Dirección":"supervisors","Enlace":"url","Publicar":"visible"}},
+  "Noticias": {"label":"news","columns":{"Título ES":"title","Título EN":"titleEn","Fecha":"date","Categoría ES":"type","Categoría EN":"typeEn","Resumen ES":"description","Resumen EN":"descriptionEn","Enlace":"url","Publicar":"visible"}},
+  "Indicadores": {"label":"metrics","columns":{"Indicador ES":"title","Indicador EN":"titleEn","Valor":"value","Fecha":"date","Fuente":"source","Enlace":"url","Publicar":"visible"}}
+}

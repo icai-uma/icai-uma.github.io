@@ -1,0 +1,5 @@
+_site/
+__pycache__/
+.venv/
+*.local.xlsx
+*.local.json
